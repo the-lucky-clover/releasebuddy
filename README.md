@@ -30,6 +30,16 @@ Full baby-steps: [BUILD_GUIDE.md](BUILD_GUIDE.md)
 | `AppStoreConnect.swift` | Native ES256 JWT + App Store Connect API client |
 | `Views.swift` | Pipeline, focus-step, API key setup, settings views |
 
+## The engine
+
+The macOS app above is the friendly face. Under `engine/` live the backend
+automation scripts it wraps — usable standalone from the terminal too.
+
+| Directory | What it is |
+|---|---|
+| `engine/asc-automation/` | App Store Connect autopilot: registers bundle IDs, enables capabilities (e.g. In-App Purchase), and creates app records via the API. Idempotent modules + `run-all.sh` orchestrator. See its [README](engine/asc-automation/README.md). |
+| `engine/release-ring/` | One CLI (`ring.py`) + agent fellowship (preflight, lint, assets, docs, shots, github, publisher, reporter) that carries an app to every major store — Apple, Google, Samsung, Amazon. See its [README](engine/release-ring/README.md). |
+
 ## Honest limits
 
 - Credentials live in the Mac Keychain only.

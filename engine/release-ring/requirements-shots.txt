@@ -1,0 +1,3 @@
+# Optional: only needed by the photographer (shots) agent.
+playwright>=1.40.0
+# After installing: .venv/bin/playwright install chromium

@@ -1,0 +1,4 @@
+config.env
+.asc-state.json
+*.p8
+__pycache__/
